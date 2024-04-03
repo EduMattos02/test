@@ -2,11 +2,11 @@ function onEdit(){
 
 var guiaAtiva = SpreadsheetApp.getActive().getSheetName();
 
-if(guiaAtiva != "LISTA GERAL CLIENTES"){
+if(guiaAtiva != "LISTA GERAL CLIENTES"){ //colocar o nome da aba da planilha
 return false;
 }
 
-var guiacliente = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("LISTA GERAL CLIENTES");
+var guiacliente = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("LISTA GERAL CLIENTES"); //guiacliente é uma variavel editavel
 
 var linha = guiacliente.getActiveCell().getRow();
 
