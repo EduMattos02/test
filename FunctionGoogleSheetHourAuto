@@ -1,0 +1,38 @@
+function onEdit(){
+
+var guiaAtiva = SpreadsheetApp.getActive().getSheetName();
+
+if(guiaAtiva != "LISTA GERAL CLIENTES"){
+return false;
+}
+
+var guiacliente = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("LISTA GERAL CLIENTES");
+
+var linha = guiacliente.getActiveCell().getRow();
+
+var coluna = guiacliente.getActiveCell().getColumn();
+
+if(coluna == 1){
+  
+  if(linha > 2){
+    
+    var celulahora = guiacliente.getRange(linha, 2).getValue();
+    var celuladata = guiacliente.getRange(linha, 1).getValue();
+
+    if(celuladata != ""){
+
+      if(celulahora == ""){
+        
+        var hora = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "hh:mm:ss a");
+        guiacliente.getRange(linha, 2).setValue(hora);
+
+      }
+    }
+    else{
+          guiacliente.getRange(linha, 2).setValue("");
+        {
+  }
+}
+}
+
+}
